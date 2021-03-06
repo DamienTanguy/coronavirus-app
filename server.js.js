@@ -8,4 +8,5 @@ const app = express()
 
 app.use(history())
 app.use(serveStatic(__dirname + '/dist/spa'))
+app.get(/.*/, (req, res) => res.sendFile(__dirname + '/dist/spa/index.html'));
 app.listen(port)
