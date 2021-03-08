@@ -10,6 +10,8 @@ const app = express();
 app.use(history());
 app.use(serveStatic(__dirname + '/dist/spa'));
 app.get('/*', function(req,res) {
+	console.log('*******__dirname');
+	console.log(__dirname);
     res.sendFile(path.join(__dirname, 'dist/spa', 'index.html'));
 });
 app.listen(port);
