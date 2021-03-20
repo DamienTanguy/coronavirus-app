@@ -34,13 +34,13 @@ const linksData = [
     title: 'Home',
     caption: 'Globale Statistics',
     icon: 'home',
-    to: '/home'
+    to: '/'
   },
   {
     title: 'Maps',
     caption: 'Coming Soon',
     icon: 'public',
-    to: '/home'
+    to: '/'
   },
   {
     title: 'Table',
