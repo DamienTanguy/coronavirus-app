@@ -38,9 +38,9 @@ const linksData = [
   },
   {
     title: 'Maps',
-    caption: 'Coming Soon',
+    caption: 'Statistics using map',
     icon: 'public',
-    to: '/'
+    to: '/maps'
   },
   {
     title: 'Table',

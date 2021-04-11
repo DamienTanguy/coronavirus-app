@@ -8,6 +8,12 @@ const routes = [
       { path: '', component: () => import('pages/Home.vue') }
     ]
   },{
+    path: '/maps',
+    component: () => import('layouts/MainLayout.vue'),
+    children: [
+      { path: '', component: () => import('pages/Map.vue') }
+    ]
+  },{
     path: '/table',
     component: () => import('layouts/MainLayout.vue'),
     children: [

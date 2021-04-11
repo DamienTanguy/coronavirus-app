@@ -7,7 +7,7 @@
     		<img class="rotate" src="../assets/quasar-logo.svg">
     	</div> 
     	<div>Contact: damientanguy75@gmail.com</div>
-    	<div>Version V1.0</div>
+    	<div>Version V1.1</div>
 	</div>
 	<!--<div class="virus-container"><img class="virus" src="../assets/virus-image.png"></div>-->
 

@@ -1,5 +1,5 @@
 <template>
-    <q-page class="chart-container">
+    <q-page class="chart-bar-container">
         <canvas id="myChartBar"></canvas>
     </q-page>
 </template>
@@ -213,16 +213,16 @@ export default {
 </script>
 
 
-<style scoped lang="scss">
+<style>
 
-  .chart-container {
+  .chart-bar-container {
     margin: auto;
     height: 70vh;
     width: 70vw;
   }
 
   /*@media only screen and (max-device-width: 1500px) {
-    .chart-container {
+    .chart-bar-container {
       display: flex;
       align-items: center;
       margin: auto;
@@ -231,7 +231,7 @@ export default {
   }*/
 
   @media only screen and (max-device-width: 640px) {
-    .chart-container {
+    .chart-bar-container {
       display: flex;
       align-items: center;
       margin: auto;

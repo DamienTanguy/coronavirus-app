@@ -1,0 +1,80 @@
+          console.log('feature');
+          console.log(feature.get('name'));
+          var country_found_flag = false;
+          for (let i = 0; i < country_api_data.length ; i++) {
+            console.log('country_api_data');
+            console.log(country_api_data[i].name);
+            if(country_api_data[i].name === feature.get('name')){
+              country_found_flag = true;
+            }else{
+              country_found_flag = false;
+            }
+          }
+          console.log('+++++FLAG =' + country_found_flag)
+          if(country_found_flag === true){
+              console.log('flag true');
+              var style = new Style({
+                fill: new Fill({
+                  color: 'red',
+                }),
+                stroke: new Stroke({
+                  color: '#319FD3',
+                  width: 1,
+                }),
+                text: new Text({
+                  font: '12px Calibri,sans-serif',
+                  fill: new Fill({
+                    color: '#000',
+                  }),
+                  stroke: new Stroke({
+                    color: '#fff',
+                    width: 3,
+                  }),
+                })
+              });
+              return [style];
+          }else{
+            console.log('flag true');
+            return [defaultStyle];
+          }
+
+
+
+
+        var country = {};
+        for (let i = 0; i < response.data.data.length ; i++) {
+          country = response.data.data[i];
+          if(response.data.data[i].name === 'USA'){
+            country.name = 'United States of America';
+            this.country_data.push(country);
+          }else if(response.data.data[i].name === 'UK'){
+            country.name = 'United Kingdom';
+            this.country_data.push(country);
+          }else if(response.data.data[i].name === 'Côte d\'Ivoire'){
+            country.name = 'Ivory Coast';
+            this.country_data.push(country);
+          }else if(response.data.data[i].name === 'S. Korea'){
+            country.name = 'South Korea';
+            this.country_data.push(country);
+          }else if(response.data.data[i].name === 'Korea, Democratic People\'s Republic of'){
+            country.name = 'North Korea';
+            this.country_data.push(country);
+          }else if(response.data.data[i].name === 'Serbia'){
+            country.name = 'Republic of Serbia';
+            this.country_data.push(country);
+          }else if(response.data.data[i].name === 'Czechia'){
+            country.name = 'Czech Republic';
+            this.country_data.push(country);
+          }else if(response.data.data[i].name === 'DRC'){
+            country.name = 'Democratic Republic of the Congo';
+            this.country_data.push(country);
+          }else if(response.data.data[i].name === 'Congo'){
+            country.name = 'Republic of the Congo';
+            this.country_data.push(country);
+          }else if(response.data.data[i].name === 'Tanzania'){
+            country.name = 'United Republic of Tanzania';
+            this.country_data.push(country);
+          }else{
+            this.country_data.push(country);
+          }
+        }

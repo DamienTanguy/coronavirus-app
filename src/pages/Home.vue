@@ -52,7 +52,7 @@ export default {
         this.countryStatistics = [
 		  {
 		    icon: 'travel_explore',
-		    type: 'Countrie',
+		    type: 'Countries',
 		    value: country_nb,
 		    backgroundColor: 'background-color:#4a5568'
 		  }
@@ -127,5 +127,38 @@ export default {
 	.main-indicator {
 		width: 96%;
 	}
+
+	@media only screen and (max-device-width: 710px) {
+    .minibox {
+    	padding: 10px;
+    	margin: 10px;
+    }
+  }
+  	@media only screen and (max-device-width: 550px) {
+    .mainbox {
+    	margin: 20px;
+    }
+    .main-indicator {
+    	width: 85%;
+    }
+    .box {
+    	flex-wrap: wrap;
+    	justify-content: center;
+    }
+    .box > .minibox {
+    	width: 40%;
+    }
+  }
+  	@media only screen and (max-device-width: 350px) {
+    .box {
+    	flex-direction: column;
+    }
+    .box > .minibox {
+    	width: 85%;
+    }
+	/*.mainbox {
+    	width: 90%;
+    }*/
+  }
 
 </style>

@@ -1,0 +1,33 @@
+    <!--LEGEND TABlE-->
+    <table class="legend_table">
+      <tbody>
+        <tr ng-repeat="leg in legend">
+          <td><div class="legend_color" ng-style="def_color(leg.color)"></div></td>
+          <td class="legend_label">{{ leg.name }}</td>
+        </tr>        
+      </tbody>
+    </table>
+    <!--<button type="button" id="change_layer">CHANGE LAYER</button>-->
+
+    <div class="display_unit_label"> Display Unit: {{ du.name }}</div>
+
+    <!--DOWNLOAD-->
+    <button type="button" id="export_statistics" ng-click="print('myChart')">CHART</button>
+    <button type="button" id="export_pdf">PDF</button>
+    <button type="button" id="export_png">PNG</button>
+    <button type="button" id="export_zip">ZIP</button>
+
+    <!--MAP-->
+    <div id="map"></div>
+    <div id="popup" class="ol-popup">
+      <a href="#" id="popup-closer" class="ol-popup-closer"></a>
+      <div id="popup-content"></div>
+    </div>
+    
+    <button type="button" id="home_button"></button>
+
+    <!--STATISTICS-->
+    <div style="width: 500px;height: 300px; display: none">
+      <canvas id="myChart"> <!--width="500" height="300" style="width: 500px;height: 300px;">-->
+      </canvas>
+    </div>

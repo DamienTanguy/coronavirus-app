@@ -1,6 +1,6 @@
 <template>
     <q-page class="flex flex-center">
-        <q-page class="chart-container">
+        <q-page class="chart-line-container">
           <canvas id="myChartTimeline"></canvas>
         </q-page>
     </q-page>
@@ -41,6 +41,13 @@ export default {
 
       axios.get('https://corona-api.com/countries/'+this.country.code).then(response => {
         this.timeline_data = response.data.data.timeline;
+
+        //order by date
+        this.timeline_data.sort(function(a, b){
+            if(a.date < b.date) { return -1; }
+            if(a.date > b.date) { return 1; }
+            return 0;
+        });
 
         //Storage of the data for the axis
         this.timeline_data.forEach(element => {
@@ -155,9 +162,16 @@ export default {
 
       axios.get('https://corona-api.com/countries/'+country.code).then(response => {
         this.timeline_data = response.data.data.timeline;
-        console.log(this.timeline_data);
+        //console.log(this.timeline_data);
 
         if(this.timeline_data.length !== 0){
+
+            //order by date
+            this.timeline_data.sort(function(a, b){
+                if(a.date < b.date) { return -1; }
+                if(a.date > b.date) { return 1; }
+                return 0;
+            });
 
             chart.options.title.display = false;
             chart.options.legend.display = true;
@@ -203,16 +217,16 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style>
 
-  .chart-container {
+  .chart-line-container {
     margin: auto;
     height: 70vh;
     width: 70vw;
   }
 
   @media only screen and (max-device-width: 640px) {
-    .chart-container {
+    .chart-line-container {
       display: flex;
       align-items: center;
       margin: auto;
@@ -221,7 +235,7 @@ export default {
   }
 
   @media only screen and (max-device-width: 400px) {
-    .chart-container {
+    .chart-line-container {
       display: flex;
       align-items: center;
       margin: auto;

@@ -1,1 +1,10 @@
 // app global css in SCSS form
+  
+  .q-menu {
+    width:200px;
+  }
+  @media only screen and (max-device-width: 350px) {
+    p {
+    	margin: 0;
+    }
+  }

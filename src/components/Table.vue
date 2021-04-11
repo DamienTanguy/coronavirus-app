@@ -153,6 +153,12 @@ export default {
   created() {
     axios.get('https://corona-api.com/countries').then(response => {
       this.data = response.data.data;
+      //order by alphabetic order
+      this.data.sort(function(a, b){
+          if(a.name < b.name) { return -1; }
+          if(a.name > b.name) { return 1; }
+          return 0;
+      })
     })
   }
 }
