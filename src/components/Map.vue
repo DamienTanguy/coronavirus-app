@@ -133,7 +133,7 @@
         var country_api_data = this.country_data;
 
         var vectorSource = new VectorSource({
-            url: 'https://openlayers.org/en/v5.1.3/examples/data/geojson/countries.geojson',
+            url: 'https://openlayers.org/en/latest/examples/data/geojson/countries.geojson',
             format: new GeoJSON()
           });
 
