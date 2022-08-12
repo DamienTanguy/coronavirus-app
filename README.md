@@ -1,6 +1,6 @@
 # Coronavirus Statistics App (corona-app)
 
-A statisitics coronavirus app
+Application showing the Covid-19 information around the world under different formats: maps, tables, graphics.
 
 ## Install the dependencies
 ```bash
