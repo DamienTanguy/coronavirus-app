@@ -6,8 +6,9 @@
     		<span>Application made with Quasar Framework</span>
     		<img class="rotate" src="../assets/quasar-logo.svg">
     	</div> 
-    	<div>Contact: damientanguy75@gmail.com</div>
-    	<div>Version V1.1</div>
+    	<div>Contact: damientanguy.pro@gmail.com</div>
+    	<div>Source code: <a href="https://github.com/DamienTanguy/coronavirus-app">https://github.com/DamienTanguy/coronavirus-app</a></div>
+    	<div>Version V1.1.1</div>
 	</div>
 	<!--<div class="virus-container"><img class="virus" src="../assets/virus-image.png"></div>-->
 
