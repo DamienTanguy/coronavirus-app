@@ -1,6 +1,6 @@
 # Coronavirus Statistics App (corona-app)
 
-A statisitics coronavirus app
+Application showing the Covid-19 information around the world under different formats: maps, tables, graphics.
 
 ## Install the dependencies
 ```bash
@@ -20,3 +20,6 @@ quasar build
 
 ### Customize the configuration
 See [Configuring quasar.conf.js](https://quasar.dev/quasar-cli/quasar-conf-js).
+
+
+Demo available here: http://coronavirus-statistics-app.herokuapp.com/
