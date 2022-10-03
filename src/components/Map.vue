@@ -18,6 +18,7 @@
   import Notifications from 'vue-notification'
   import 'ol/ol.css';
   import GeoJSON from 'ol/format/GeoJSON';
+  import countryFile from '../assets/countries.json'
   import Map from 'ol/Map';
   import VectorLayer from 'ol/layer/Vector';
   import VectorSource from 'ol/source/Vector';
@@ -133,7 +134,8 @@
         var country_api_data = this.country_data;
 
         var vectorSource = new VectorSource({
-            url: 'https://openlayers.org/en/latest/examples/data/geojson/countries.geojson',
+            //url: 'https://openlayers.org/en/latest/examples/data/geojson/countries.geojson',
+            features: new GeoJSON().readFeatures(countryFile,{ featureProjection:'EPSG:3857'}),
             format: new GeoJSON()
           });
 
@@ -159,11 +161,14 @@
           });
 
         //include the data from API in the features of the shapefile
-        var key = vectorSource.on('change', function(event) {
+        //var key = vectorSource.on('change', function(event) {
               vectorLayer.getSource().forEachFeature(function(feature) {
                 //var country_name = feature.get('name');
+
                 for (let country_index = 0; country_index < country_api_data.length ; country_index++) {
-                  if(country_api_data[country_index].name === feature.get('name')){
+                  console.log('feature.get(ADMIN)');
+                  console.log(feature.get('ADMIN'));
+                  if(country_api_data[country_index].name === feature.get('ADMIN')/*feature.get('name')*/){
                     //LIMITED STAK CALL
                     //feature.set('country_name', country_api_data[country_index].name);
                     //feature.set('code', country_api_data[country_index].code);
@@ -176,7 +181,7 @@
                   }
                 }
               });
-          });
+          //});
 
         // the style function returns an array of styles for the given feature and resolution.
         // Return null to hide the feature.
@@ -218,7 +223,7 @@
           var info = document.getElementById('info');
           if (feature) {
             document.getElementById("info").style.display = "block";
-            info.innerHTML = '<p class="no-margin">' + 'Country'+' : '+ feature.get('name') + '</p>';
+            info.innerHTML = '<p class="no-margin">' + 'Country'+' : '+ feature.get('ADMIN')/*feature.get('name')*/ + '</p>';
             
             if(feature.values_.color){
               info.innerHTML += '<p class="no-margin">' + 'Population'+':' + parseInt(feature.get('population')).toLocaleString('en') + '</p>';
