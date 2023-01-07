@@ -22,4 +22,4 @@ quasar build
 See [Configuring quasar.conf.js](https://quasar.dev/quasar-cli/quasar-conf-js).
 
 
-Demo available here: http://coronavirus-statistics-app.herokuapp.com/
+Demo available here: http://coronavirus-statistics-app.herokuapp.com/ (Not working anymore - Heroku Free Service Ended & API out of service)
